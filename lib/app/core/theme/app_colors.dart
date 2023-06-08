@@ -40,6 +40,14 @@ class AppColors {
   static const Color kTextIconWhiteDisabled = Color(0xff9D9EA1);
 
   // App Color
+
+  static const Color kBottomNaV = Color(0xff263238);
+  static const Color kCircle = Color(0xff2C4653);
+  static const Color kBlackFade = Color(0xff212832);
+  static const Color kGreyFade = Color(0xff6F8793);
+  static const Color kGreyBlue = Color(0xff455A64);
+  static const Color kGrey = Color(0xff8CAAB9);
+  static const Color kYellowApp = Color(0xffFED36A);
   static const Color kBlackApp = Color(0xff212832);
   static const Color kWhite = kNeutral0;
   static const Color kBlack = Color(0xff000000);

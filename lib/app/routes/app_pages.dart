@@ -5,6 +5,8 @@ import 'package:taskmanagementapp/app/modules/CreateAccount/binding.dart';
 import 'package:taskmanagementapp/app/modules/CreateAccount/page.dart';
 import 'package:taskmanagementapp/app/modules/CreateNewTask/binding.dart';
 import 'package:taskmanagementapp/app/modules/CreateNewTask/page.dart';
+import 'package:taskmanagementapp/app/modules/Home/binding.dart';
+import 'package:taskmanagementapp/app/modules/Home/page.dart';
 import 'package:taskmanagementapp/app/modules/NewMessage/binding.dart';
 import 'package:taskmanagementapp/app/modules/NewMessage/page.dart';
 import 'package:taskmanagementapp/app/modules/Profile/binding.dart';
@@ -15,6 +17,7 @@ import 'package:taskmanagementapp/app/modules/Splash/binding.dart';
 import 'package:taskmanagementapp/app/modules/Splash/page.dart';
 import 'package:taskmanagementapp/app/modules/TaskDetails/binding.dart';
 import 'package:taskmanagementapp/app/modules/TaskDetails/page.dart';
+import 'package:taskmanagementapp/app/widgets/pages.dart';
 
 part './app_routes.dart';
 
@@ -26,6 +29,10 @@ class AppPages {
 
   static final pages = [
     // Middleware
+    GetPage(
+      name: Routes.Global,
+      page: () => GlobalPage(),
+    ),
     GetPage(
       name: Routes.Splash,
       page: () => const SplashPage(),
@@ -65,6 +72,11 @@ class AppPages {
       name: Routes.Profile,
       page: () => const ProfilePage(),
       binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: Routes.Home,
+      page: () => const HomePage(),
+      binding: HomeBinding(),
     ),
   ];
 }

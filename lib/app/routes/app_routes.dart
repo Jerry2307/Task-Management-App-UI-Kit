@@ -15,4 +15,5 @@ abstract class Routes {
   static const CreateNewTask = '/createnewtask';
   static const Notification = '/notification';
   static const Profile = '/profile';
+  static const Global = '/global';
 }
