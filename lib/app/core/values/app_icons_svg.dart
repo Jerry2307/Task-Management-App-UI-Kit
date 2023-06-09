@@ -17,4 +17,9 @@ class AppIconsSvg {
   static const String icMessage = '$_svgAssets/messages1.svg';
   static const String icNotification = '$_svgAssets/notification1.svg';
   static const String icAdd = '$_svgAssets/addsquare.svg';
+  static const String icEdit = '$_svgAssets/edit.svg';
+  static const String icProfile2user = '$_svgAssets/profile2user.svg';
+  static const String icCalendarRemove = '$_svgAssets/calendarremove.svg';
+  static const String icTickCircle = '$_svgAssets/tickcircle.svg';
+  static const String icUnTickCircle = '$_svgAssets/untickcircle.svg';
 }

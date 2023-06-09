@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FontSizes {
   const FontSizes._();
-
+  static final double fontSize7 = 7.sp;
+  static final double fontSize8 = 8.sp;
   static final double fontSize10 = 10.sp;
   static final double fontSize11 = 11.sp;
   static final double fontSize12 = 12.sp;

@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:taskmanagementapp/app/core/theme/app_colors.dart';
 import 'package:taskmanagementapp/app/core/values/app_icons_svg.dart';
 import 'package:taskmanagementapp/app/core/values/font_sizes.dart';
+import 'package:taskmanagementapp/app/routes/app_pages.dart';
 import 'package:taskmanagementapp/app/widgets/CompletedTask.dart';
 import 'package:taskmanagementapp/app/widgets/OnGoingProject.dart';
 import 'package:taskmanagementapp/app/widgets/SeeAll.dart';
@@ -128,9 +129,22 @@ class HomePage extends GetView<HomeController> {
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 25.sp),
           child: ListView(
-            children: const [
-              SeeAll(text: 'Completed Tasks'),
-              SingleChildScrollView(
+            children: [
+              SeeAll(
+                text: 'Completed Tasks',
+                fw: FontWeight.w600,
+                size: FontSizes.fontSize20,
+                name: Text(
+                  'See all',
+                  style: GoogleFonts.inter(
+                    fontWeight: FontWeight.w400,
+                    fontSize: FontSizes.fontSize16,
+                    color: AppColors.kYellowApp,
+                    letterSpacing: 0.5.sp,
+                  ),
+                ),
+              ),
+              const SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
@@ -152,29 +166,60 @@ class HomePage extends GetView<HomeController> {
                   ],
                 ),
               ),
-              SizedBox(),
-              SeeAll(text: 'Ongoing Projects'),
+              const SizedBox(),
+              SeeAll(
+                text: 'Ongoing Projects',
+                fw: FontWeight.w600,
+                size: FontSizes.fontSize20,
+                name: Text(
+                  'See all',
+                  style: GoogleFonts.inter(
+                    fontWeight: FontWeight.w400,
+                    fontSize: FontSizes.fontSize16,
+                    color: AppColors.kYellowApp,
+                    letterSpacing: 0.5.sp,
+                  ),
+                ),
+              ),
               SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Column(
                   children: [
-                    OnGoingProject(
-                      title: 'Mobile App Wireframe',
-                      percent: 0.75,
-                      text: '21 March',
-                      percentText: '75%',
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed(Routes.TaskDetails);
+                      },
+                      child: OnGoingProject(
+                        title: 'Mobile App Wireframe',
+                        percent: 0.75,
+                        text: '21 March',
+                        percentText: '75%',
+                        radius: 35.sp,
+                      ),
                     ),
-                    OnGoingProject(
-                      title: 'Real Estate App Design',
-                      percent: 0.60,
-                      text: '20 June',
-                      percentText: '60%',
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed(Routes.TaskDetails);
+                      },
+                      child: OnGoingProject(
+                        title: 'Real Estate App Design',
+                        percent: 0.60,
+                        text: '20 June',
+                        percentText: '60%',
+                        radius: 35.sp,
+                      ),
                     ),
-                    OnGoingProject(
-                      title: 'Dashboard & App Design',
-                      percent: 0.75,
-                      text: '21 March',
-                      percentText: '75%',
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed(Routes.TaskDetails);
+                      },
+                      child: OnGoingProject(
+                        title: 'Dashboard & App Design',
+                        percent: 0.75,
+                        text: '21 March',
+                        percentText: '75%',
+                        radius: 35.sp,
+                      ),
                     ),
                   ],
                 ),

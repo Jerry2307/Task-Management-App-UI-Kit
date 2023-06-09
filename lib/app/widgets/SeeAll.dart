@@ -2,14 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskmanagementapp/app/core/theme/app_colors.dart';
-import 'package:taskmanagementapp/app/core/values/font_sizes.dart';
 
 class SeeAll extends StatelessWidget {
   final String text;
+  final FontWeight fw;
+  final double size;
+  final Widget name;
 
   const SeeAll({
     Key? key,
     required this.text,
+    required this.fw,
+    required this.size,
+    required this.name,
   }) : super(key: key);
 
   @override
@@ -22,21 +27,13 @@ class SeeAll extends StatelessWidget {
           Text(
             text,
             style: GoogleFonts.inter(
-              fontWeight: FontWeight.w600,
-              fontSize: FontSizes.fontSize20,
+              fontWeight: fw,
+              fontSize: size,
               color: AppColors.kWhite,
               letterSpacing: 0.5.sp,
             ),
           ),
-          Text(
-            'See all',
-            style: GoogleFonts.inter(
-              fontWeight: FontWeight.w400,
-              fontSize: FontSizes.fontSize16,
-              color: AppColors.kYellowApp,
-              letterSpacing: 0.5.sp,
-            ),
-          ),
+          name
         ],
       ),
     );

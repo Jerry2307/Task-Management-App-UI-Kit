@@ -3,12 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskmanagementapp/app/core/theme/app_colors.dart';
 import 'package:taskmanagementapp/app/core/values/font_sizes.dart';
-import 'package:percent_indicator/percent_indicator.dart';
+import 'package:taskmanagementapp/app/widgets/ThreeAvatars.dart';
+
+import 'CircularPercentIndiCator.dart';
 
 class OnGoingProject extends StatelessWidget {
   final String title;
   final String text;
   final double percent;
+  final double radius;
   final String percentText;
 
   const OnGoingProject({
@@ -17,6 +20,7 @@ class OnGoingProject extends StatelessWidget {
     required this.percent,
     required this.text,
     required this.percentText,
+    required this.radius,
   }) : super(key: key);
 
   @override
@@ -63,24 +67,7 @@ class OnGoingProject extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(height: 7.sp),
-                              SizedBox(
-                                width: 72.sp,
-                                child: Stack(
-                                  children: [
-                                    Image.asset('assets/images/Ellipse 2.png'),
-                                    Positioned(
-                                      left: 14.sp,
-                                      child: Image.asset(
-                                          'assets/images/Ellipse 3.png'),
-                                    ),
-                                    Positioned(
-                                      left: 28.sp,
-                                      child: Image.asset(
-                                          'assets/images/Ellipse 4.png'),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              const ThreeAvatars(),
                               Padding(
                                 padding: EdgeInsets.only(top: 13.sp),
                                 child: RichText(
@@ -118,25 +105,11 @@ class OnGoingProject extends StatelessWidget {
               )
             ],
           ),
-          Positioned(
-            right: 16.sp,
-            bottom: 12.sp,
-            child: CircularPercentIndicator(
-              reverse: true,
-              radius: 35.sp,
-              lineWidth: 2.sp,
-              percent: percent,
-              backgroundColor: AppColors.kCircle,
-              progressColor: AppColors.kYellowApp,
-              center: Text(
-                percentText,
-                style: GoogleFonts.inter(
-                  fontWeight: FontWeight.w600,
-                  fontSize: FontSizes.fontSize14,
-                  color: AppColors.kWhite,
-                ),
-              ),
-            ),
+          CircularPercentIndicatorWidget(
+            percent: percent,
+            percentText: percentText,
+            radius: radius,
+            sizeText: FontSizes.fontSize16,
           ),
         ],
       ),

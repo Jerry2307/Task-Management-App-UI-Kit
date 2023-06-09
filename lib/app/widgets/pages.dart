@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:taskmanagementapp/app/core/theme/app_colors.dart';
 import 'package:taskmanagementapp/app/core/values/app_icons_svg.dart';
+import 'package:taskmanagementapp/app/core/values/font_sizes.dart';
 import 'package:taskmanagementapp/app/modules/Chat/page.dart';
 import 'package:taskmanagementapp/app/modules/CreateNewTask/page.dart';
 import 'package:taskmanagementapp/app/modules/Home/page.dart';
@@ -31,138 +34,101 @@ class GlobalPage extends StatelessWidget {
           children: pages,
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: AppColors.kBottomNaV,
-        currentIndex: currentIndex.value,
-        onTap: (index) {
-          currentIndex.value = index;
-        },
-        items: [
-          BottomNavigationBarItem(
-            icon: Padding(
-              padding: const EdgeInsets.only(top: 15),
-              child: Container(
-                decoration: const BoxDecoration(
-                  color: Color(0xFFFFFFFF),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(40),
+      bottomNavigationBar: Obx(
+        () => SizedBox(
+          height: 87.sp,
+          child: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            backgroundColor: AppColors.kBottomNaV,
+            elevation: 0.sp,
+            currentIndex: currentIndex.value,
+            onTap: (index) {
+              currentIndex.value = index;
+            },
+            unselectedLabelStyle: GoogleFonts.inter(
+              fontWeight: FontWeight.w400,
+              fontSize: FontSizes.fontSize11,
+            ),
+            selectedLabelStyle: GoogleFonts.inter(
+              fontWeight: FontWeight.w400,
+              fontSize: FontSizes.fontSize11,
+            ),
+            unselectedItemColor: AppColors.kTextLabel,
+            selectedItemColor: AppColors.kYellowApp,
+            items: [
+              BottomNavigationBarItem(
+                icon: Align(
+                  child: SvgPicture.asset(
+                    AppIconsSvg.icHome,
+                    width: 24.sp,
+                    height: 24.sp,
+                    // ignore: deprecated_member_use
+                    color:
+                        currentIndex.value == 0 ? AppColors.kYellowApp : null,
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color.fromRGBO(0, 0, 0, 0.2),
-                      offset: Offset(0, 5),
-                      blurRadius: 30,
-                    )
-                  ],
                 ),
-                child: SvgPicture.asset(
-                  AppIconsSvg.icHome,
-                  width: 44,
-                  height: 44,
-                ),
+                label: 'Home',
+                // Change the color as desired
               ),
-            ),
-            label: 'Home',
+              BottomNavigationBarItem(
+                icon: Align(
+                  child: SvgPicture.asset(
+                    AppIconsSvg.icMessage,
+                    width: 24.sp,
+                    height: 24.sp,
+                    // ignore: deprecated_member_use
+                    color:
+                        currentIndex.value == 1 ? AppColors.kYellowApp : null,
+                  ),
+                ),
+                label: 'Chat',
+              ),
+              BottomNavigationBarItem(
+                icon: Container(
+                  width: 54.sp,
+                  height: 54.sp,
+                  color: AppColors.kYellowApp,
+                  child: Align(
+                    child: SvgPicture.asset(
+                      AppIconsSvg.icAdd,
+                      width: 24.sp,
+                      height: 24.sp,
+                      // ignore: deprecated_member_use
+                    ),
+                  ),
+                ),
+                label: '',
+              ),
+              BottomNavigationBarItem(
+                icon: Align(
+                  child: SvgPicture.asset(
+                    AppIconsSvg.icCalendar,
+                    width: 24.sp,
+                    height: 24.sp,
+                    // ignore: deprecated_member_use
+                    color:
+                        currentIndex.value == 3 ? AppColors.kYellowApp : null,
+                  ),
+                ),
+                label: 'Calendar',
+              ),
+              BottomNavigationBarItem(
+                icon: Align(
+                  child: SvgPicture.asset(
+                    AppIconsSvg.icNotification,
+                    width: 24.sp,
+                    height: 24.sp,
+                    // ignore: deprecated_member_use
+                    color:
+                        currentIndex.value == 4 ? AppColors.kYellowApp : null,
+                  ),
+                ),
+                label: 'Notification',
+              ),
+            ],
           ),
-          BottomNavigationBarItem(
-            icon: Container(
-              margin: const EdgeInsets.only(right: 27),
-              decoration: const BoxDecoration(
-                color: Color(0xFFFFFFFF),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(40),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromRGBO(0, 0, 0, 0.2),
-                    offset: Offset(0, 5),
-                    blurRadius: 30,
-                  )
-                ],
-              ),
-              child: SvgPicture.asset(
-                AppIconsSvg.icMessage,
-                width: 44,
-                height: 44,
-              ),
-            ),
-            label: 'Chat',
-          ),
-          BottomNavigationBarItem(
-            icon: Container(
-              margin: const EdgeInsets.only(right: 27),
-              decoration: const BoxDecoration(
-                color: Color(0xFFFFFFFF),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(40),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromRGBO(0, 0, 0, 0.2),
-                    offset: Offset(0, 5),
-                    blurRadius: 30,
-                  )
-                ],
-              ),
-              child: SvgPicture.asset(
-                AppIconsSvg.icAdd,
-                width: 44,
-                height: 44,
-              ),
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Container(
-              margin: const EdgeInsets.only(right: 27),
-              decoration: const BoxDecoration(
-                color: Color(0xFFFFFFFF),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(40),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromRGBO(0, 0, 0, 0.2),
-                    offset: Offset(0, 5),
-                    blurRadius: 30,
-                  )
-                ],
-              ),
-              child: SvgPicture.asset(
-                AppIconsSvg.icCalendar,
-                width: 44,
-                height: 44,
-              ),
-            ),
-            label: 'Calendar',
-          ),
-          BottomNavigationBarItem(
-            icon: Container(
-              margin: const EdgeInsets.only(right: 27),
-              decoration: const BoxDecoration(
-                color: Color(0xFFFFFFFF),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(40),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromRGBO(0, 0, 0, 0.2),
-                    offset: Offset(0, 5),
-                    blurRadius: 30,
-                  )
-                ],
-              ),
-              child: SvgPicture.asset(
-                AppIconsSvg.icNotification,
-                width: 44,
-                height: 44,
-              ),
-            ),
-            label: 'Notification',
-          ),
-        ],
+        ),
       ),
-      // ...
     );
   }
 }
