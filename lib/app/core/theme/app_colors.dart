@@ -39,7 +39,8 @@ class AppColors {
   static const Color kTextIconWhiteSecondary = Color(0xffC1C2C4);
   static const Color kTextIconWhiteDisabled = Color(0xff9D9EA1);
 
-  // App Color
+  // App Color#D2D2D2
+  static const Color kTextFade1 = Color(0xffD2D2D2);
   static const Color kTextFade = Color(0xffB8B8B8);
   static const Color kText = Color(0xffBCCFD8);
   static const Color kTextLabel = Color(0xff617D8A);

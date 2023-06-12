@@ -23,9 +23,10 @@ class NotificationPage extends GetView<NotificationController> {
             elevation: 0,
             backgroundColor: Colors.transparent,
             automaticallyImplyLeading: false,
-            flexibleSpace: const AppBarWidget(
+            flexibleSpace: AppBarWidget(
               path: AppIconsSvg.icEdit,
               text: 'Notifications',
+              onTap: () {},
             ),
           ),
         ),
@@ -50,6 +51,7 @@ class NotificationPage extends GetView<NotificationController> {
                   datetime: '31 min',
                   text: 'left a comment in task',
                   text2: ' Mobile App Design Project',
+                  text3: '',
                 ),
                 const NotificationWidget(
                   path: 'assets/images/8.png',
@@ -57,6 +59,7 @@ class NotificationPage extends GetView<NotificationController> {
                   datetime: '31 min',
                   text: 'left a comment in task',
                   text2: ' Mobile App Design Project',
+                  text3: '',
                 ),
                 const NotificationWidget(
                   path: 'assets/images/7.png',
@@ -64,6 +67,7 @@ class NotificationPage extends GetView<NotificationController> {
                   datetime: '31 min',
                   text: 'left a comment in task',
                   text2: ' Mobile App Design Project',
+                  text3: '',
                 ),
                 const NotificationWidget(
                   path: 'assets/images/6.png',
@@ -71,6 +75,7 @@ class NotificationPage extends GetView<NotificationController> {
                   datetime: '31 min',
                   text: 'left a comment in task',
                   text2: ' Mobile App Design Project',
+                  text3: '',
                 ),
                 Padding(
                   padding: EdgeInsets.only(bottom: 16.sp),
@@ -87,6 +92,7 @@ class NotificationPage extends GetView<NotificationController> {
                   datetime: '31 min',
                   text: 'left a comment in task',
                   text2: ' Mobile App Design Project',
+                  text3: ' as in process',
                 ),
                 const NotificationWidget(
                   path: 'assets/images/7.png',
@@ -94,6 +100,7 @@ class NotificationPage extends GetView<NotificationController> {
                   datetime: '31 min',
                   text: 'left a comment in task',
                   text2: ' Mobile App Design Project',
+                  text3: '',
                 ),
                 const NotificationWidget(
                   path: 'assets/images/6.png',
@@ -101,6 +108,7 @@ class NotificationPage extends GetView<NotificationController> {
                   datetime: '31 min',
                   text: 'left a comment in task',
                   text2: ' Mobile App Design Project',
+                  text3: '',
                 ),
               ],
             ),

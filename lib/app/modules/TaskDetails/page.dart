@@ -27,9 +27,10 @@ class TaskDetailsPage extends GetView<TaskDetailsController> {
             elevation: 0,
             backgroundColor: Colors.transparent,
             automaticallyImplyLeading: false,
-            flexibleSpace: const AppBarWidget(
+            flexibleSpace: AppBarWidget(
               path: AppIconsSvg.icEdit,
               text: 'Task Details',
+              onTap: () {},
             ),
           ),
         ),

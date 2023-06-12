@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskmanagementapp/app/core/theme/app_colors.dart';
 import 'package:taskmanagementapp/app/core/values/app_icons_svg.dart';
 import 'package:taskmanagementapp/app/core/values/font_sizes.dart';
+import 'package:taskmanagementapp/app/routes/app_pages.dart';
 import 'package:taskmanagementapp/app/widgets/AppBar.dart';
 import 'package:taskmanagementapp/app/widgets/Chat.dart';
+import 'package:taskmanagementapp/app/widgets/Dots.dart';
 import 'package:taskmanagementapp/app/widgets/Groups.dart';
-
-import '../../widgets/Dots.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({Key? key}) : super(key: key);
@@ -32,9 +33,12 @@ class _ChatPageState extends State<ChatPage> {
             elevation: 0,
             backgroundColor: Colors.transparent,
             automaticallyImplyLeading: false,
-            flexibleSpace: const AppBarWidget(
+            flexibleSpace: AppBarWidget(
               path: AppIconsSvg.icEdit,
               text: 'Messages',
+              onTap: () {
+                Get.toNamed(Routes.NewMessage);
+              },
             ),
           ),
         ),
@@ -115,12 +119,17 @@ class _ChatPageState extends State<ChatPage> {
                       scrollDirection: Axis.vertical,
                       child: Column(
                         children: [
-                          const Chats(
-                            name: 'Oliva Anna',
-                            path: 'assets/images/1.png',
-                            datetime: '31 min',
-                            fw: FontWeight.w600,
-                            dots: Dots(),
+                          GestureDetector(
+                            onTap: () {
+                              Get.toNamed(Routes.Messages);
+                            },
+                            child: const Chats(
+                              name: 'Oliva Anna',
+                              path: 'assets/images/1.png',
+                              datetime: '31 min',
+                              fw: FontWeight.w600,
+                              dots: Dots(),
+                            ),
                           ),
                           const Chats(
                             name: 'Emma',
@@ -181,39 +190,44 @@ class _ChatPageState extends State<ChatPage> {
                   Padding(
                     padding: EdgeInsets.symmetric(
                         horizontal: 25.sp, vertical: 32.sp),
-                    child: const SingleChildScrollView(
+                    child: SingleChildScrollView(
                       scrollDirection: Axis.vertical,
                       child: Column(
                         children: [
-                          Groups(
-                            name: 'Android Developer',
-                            path: 'assets/images/4.png',
+                          GestureDetector(
+                            onTap: () {
+                              Get.toNamed(Routes.Messages);
+                            },
+                            child: const Groups(
+                              name: 'Android Developer',
+                              path: 'assets/images/4.png',
+                            ),
                           ),
-                          Groups(
+                          const Groups(
                             name: 'IOS Developer',
                             path: 'assets/images/7.png',
                           ),
-                          Groups(
+                          const Groups(
                             name: 'Web Developer',
                             path: 'assets/images/8.png',
                           ),
-                          Groups(
+                          const Groups(
                             name: 'Back-End Developer',
                             path: 'assets/images/9.png',
                           ),
-                          Groups(
+                          const Groups(
                             name: 'Front-End Developer',
                             path: 'assets/images/10.png',
                           ),
-                          Groups(
+                          const Groups(
                             name: 'Android Developer',
                             path: 'assets/images/11.png',
                           ),
-                          Groups(
+                          const Groups(
                             name: 'Personal Project',
                             path: 'assets/images/12.png',
                           ),
-                          Groups(
+                          const Groups(
                             name: 'School System Project',
                             path: 'assets/images/13.png',
                           ),

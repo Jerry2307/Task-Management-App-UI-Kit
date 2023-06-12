@@ -7,6 +7,7 @@ import 'package:taskmanagementapp/app/core/theme/app_colors.dart';
 import 'package:taskmanagementapp/app/core/values/app_icons_svg.dart';
 import 'package:taskmanagementapp/app/core/values/font_sizes.dart';
 import 'package:taskmanagementapp/app/routes/app_pages.dart';
+import 'package:taskmanagementapp/app/widgets/ButtonIconYellow.dart';
 import 'package:taskmanagementapp/app/widgets/CompletedTask.dart';
 import 'package:taskmanagementapp/app/widgets/OnGoingProject.dart';
 import 'package:taskmanagementapp/app/widgets/SeeAll.dart';
@@ -57,10 +58,15 @@ class HomePage extends GetView<HomeController> {
                           ),
                         ],
                       ),
-                      Image.asset(
-                        'assets/images/avatar.png',
-                        width: 47.sp,
-                        height: 48.sp,
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed(Routes.Profile);
+                        },
+                        child: Image.asset(
+                          'assets/images/avatar.png',
+                          width: 47.sp,
+                          height: 48.sp,
+                        ),
                       ),
                     ],
                   ),
@@ -104,20 +110,12 @@ class HomePage extends GetView<HomeController> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 16.sp),
-                        child: Container(
-                          width: 57.sp,
-                          height: 58.sp,
-                          color: AppColors.kYellowApp,
-                          child: Align(
-                            child: SvgPicture.asset(
-                              AppIconsSvg.icSetting,
-                              width: 20.sp,
-                              height: 20.sp,
-                            ),
-                          ),
-                        ),
-                      ),
+                          padding: EdgeInsets.only(left: 16.sp),
+                          child: ButtonIconYellow(
+                            path: AppIconsSvg.icSetting,
+                            width: 56.sp,
+                            height: 56.sp,
+                          )),
                     ],
                   ),
                 ],

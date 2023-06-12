@@ -11,6 +11,7 @@ import 'package:taskmanagementapp/app/modules/CreateNewTask/page.dart';
 import 'package:taskmanagementapp/app/modules/Home/page.dart';
 import 'package:taskmanagementapp/app/modules/Notification/page.dart';
 import 'package:taskmanagementapp/app/modules/Schedule/page.dart';
+import 'package:taskmanagementapp/app/widgets/ButtonIconYellow.dart';
 
 // ignore: must_be_immutable
 class GlobalPage extends StatelessWidget {
@@ -21,7 +22,7 @@ class GlobalPage extends StatelessWidget {
     const HomePage(),
     const ChatPage(),
     const CreateNewTaskPage(),
-    const SchedulePage(),
+    SchedulePage(),
     const NotificationPage(),
   ];
 
@@ -84,18 +85,10 @@ class GlobalPage extends StatelessWidget {
                 label: 'Chat',
               ),
               BottomNavigationBarItem(
-                icon: Container(
+                icon: ButtonIconYellow(
                   width: 54.sp,
                   height: 54.sp,
-                  color: AppColors.kYellowApp,
-                  child: Align(
-                    child: SvgPicture.asset(
-                      AppIconsSvg.icAdd,
-                      width: 24.sp,
-                      height: 24.sp,
-                      // ignore: deprecated_member_use
-                    ),
-                  ),
+                  path: AppIconsSvg.icAdd,
                 ),
                 label: '',
               ),

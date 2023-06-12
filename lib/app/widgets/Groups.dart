@@ -19,37 +19,42 @@ class Groups extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: 20.sp),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.asset(path),
-          Padding(
-            padding: EdgeInsets.only(left: 17.sp, right: 25.sp),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  name,
-                  style: GoogleFonts.inter(
-                    fontWeight: FontWeight.w600,
-                    fontSize: FontSizes.fontSize14,
-                    color: AppColors.kWhite,
-                  ),
-                ),
-                SizedBox(height: 2.sp),
-                SizedBox(
-                  width: 200,
-                  child: Text(
-                    'Robert: Did you check the last task?',
-                    style: GoogleFonts.inter(
-                      fontWeight: FontWeight.w500,
-                      fontSize: FontSizes.fontSize13,
-                      color: AppColors.kTextFade,
+          SizedBox(width: 10.sp),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.only(right: 25.sp),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      name,
+                      style: GoogleFonts.inter(
+                        fontWeight: FontWeight.w600,
+                        fontSize: FontSizes.fontSize14,
+                        color: AppColors.kWhite,
+                      ),
                     ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
-              ],
+                  SizedBox(height: 2.sp),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      'Robert: Did you check the last task?',
+                      style: GoogleFonts.inter(
+                        fontWeight: FontWeight.w500,
+                        fontSize: FontSizes.fontSize13,
+                        color: AppColors.kTextFade,
+                      ),
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Column(

@@ -22,4 +22,23 @@ class AppIconsSvg {
   static const String icCalendarRemove = '$_svgAssets/calendarremove.svg';
   static const String icTickCircle = '$_svgAssets/tickcircle.svg';
   static const String icUnTickCircle = '$_svgAssets/untickcircle.svg';
+  static const String icCallCalling = '$_svgAssets/callcalling.svg';
+  static const String icVideo = '$_svgAssets/video.svg';
+  static const String icElementequal = '$_svgAssets/elementequal.svg';
+  static const String icSend = '$_svgAssets/send.svg';
+  static const String icVoice = '$_svgAssets/microphone2.svg';
+  static const String icSearchMess = '$_svgAssets/searchWhite.svg';
+  static const String icAddSquare1 = '$_svgAssets/addsquare1.svg';
+  static const String icCloseSquare = '$_svgAssets/closesquare.svg';
+  static const String icCalendar1 = '$_svgAssets/calendar1.svg';
+  static const String icClock = '$_svgAssets/clock.svg';
+  static const String icEditFade = '$_svgAssets/editfade.svg';
+  static const String icArrowDown = '$_svgAssets/arrowdown.svg';
+  static const String icLock = '$_svgAssets/lock.svg';
+  static const String icUserAdd = '$_svgAssets/useradd.svg';
+  static const String icTask = '$_svgAssets/task.svg';
+  static const String icSetting2 = '$_svgAssets/setting2.svg';
+  static const String icSecuritycard = '$_svgAssets/securitycard.svg';
+  static const String icUsertagFade = '$_svgAssets/usertagfade.svg';
+  static const String icLogOut = '$_svgAssets/logoutcurve.svg';
 }

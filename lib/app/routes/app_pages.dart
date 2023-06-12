@@ -7,10 +7,14 @@ import 'package:taskmanagementapp/app/modules/CreateNewTask/binding.dart';
 import 'package:taskmanagementapp/app/modules/CreateNewTask/page.dart';
 import 'package:taskmanagementapp/app/modules/Home/binding.dart';
 import 'package:taskmanagementapp/app/modules/Home/page.dart';
+import 'package:taskmanagementapp/app/modules/Messages/binding.dart';
+import 'package:taskmanagementapp/app/modules/Messages/page.dart';
 import 'package:taskmanagementapp/app/modules/NewMessage/binding.dart';
 import 'package:taskmanagementapp/app/modules/NewMessage/page.dart';
 import 'package:taskmanagementapp/app/modules/Profile/binding.dart';
 import 'package:taskmanagementapp/app/modules/Profile/page.dart';
+import 'package:taskmanagementapp/app/modules/Schedule/binding.dart';
+import 'package:taskmanagementapp/app/modules/Schedule/page.dart';
 import 'package:taskmanagementapp/app/modules/SignIn/binding.dart';
 import 'package:taskmanagementapp/app/modules/SignIn/page.dart';
 import 'package:taskmanagementapp/app/modules/Splash/binding.dart';
@@ -64,6 +68,11 @@ class AppPages {
       binding: NewMessageBinding(),
     ),
     GetPage(
+      name: Routes.Messages,
+      page: () => const MessagesPage(),
+      binding: MessagesBinding(),
+    ),
+    GetPage(
       name: Routes.CreateNewTask,
       page: () => const CreateNewTaskPage(),
       binding: CreateNewTaskBinding(),
@@ -77,6 +86,11 @@ class AppPages {
       name: Routes.Home,
       page: () => const HomePage(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: Routes.Schedule,
+      page: () => SchedulePage(),
+      binding: ScheduleBinding(),
     ),
   ];
 }

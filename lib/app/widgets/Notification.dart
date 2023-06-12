@@ -8,6 +8,7 @@ class NotificationWidget extends StatelessWidget {
   final String name;
   final String text;
   final String text2;
+  final String text3;
   final String path;
   final String datetime;
 
@@ -18,6 +19,7 @@ class NotificationWidget extends StatelessWidget {
     required this.datetime,
     required this.text,
     required this.text2,
+    required this.text3,
   }) : super(key: key);
 
   @override
@@ -25,16 +27,15 @@ class NotificationWidget extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: 20.sp),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.asset(path),
-          Padding(
-            padding: EdgeInsets.only(right: 25.sp),
+          SizedBox(width: 10.sp),
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  width: 200,
+                Align(
+                  alignment: Alignment.topLeft,
                   child: RichText(
                     text: TextSpan(
                       text: name,
@@ -43,7 +44,6 @@ class NotificationWidget extends StatelessWidget {
                         fontSize: FontSizes.fontSize14,
                         color: AppColors.kWhite,
                       ),
-                      /*defining default style is optional */
                       children: <TextSpan>[
                         TextSpan(
                           text: text,
@@ -61,6 +61,14 @@ class NotificationWidget extends StatelessWidget {
                             color: AppColors.kYellowApp,
                           ),
                         ),
+                        TextSpan(
+                          text: text3,
+                          style: GoogleFonts.inter(
+                            fontWeight: FontWeight.w400,
+                            fontSize: FontSizes.fontSize14,
+                            color: AppColors.kGrey,
+                          ),
+                        ),
                       ],
                     ),
                     maxLines: 2,
@@ -70,18 +78,21 @@ class NotificationWidget extends StatelessWidget {
               ],
             ),
           ),
-          Column(
-            children: [
-              Text(
-                datetime,
-                style: GoogleFonts.inter(
-                  fontSize: FontSizes.fontSize8,
-                  color: AppColors.kWhite,
-                  fontWeight: FontWeight.w600,
+          Padding(
+            padding: EdgeInsets.only(left: 5.sp),
+            child: Column(
+              children: [
+                Text(
+                  datetime,
+                  style: GoogleFonts.inter(
+                    fontSize: FontSizes.fontSize8,
+                    color: AppColors.kWhite,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-              ),
-              SizedBox(height: 5.sp),
-            ],
+                SizedBox(height: 5.sp),
+              ],
+            ),
           )
         ],
       ),
